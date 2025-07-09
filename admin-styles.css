@@ -1,0 +1,337 @@
+/* Admin-specific styles */
+
+/* Trainer Dropdown Styles */
+.trainer-search {
+  margin-bottom: 32px;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-select {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  min-height: 44px;
+}
+
+.dropdown-selected:hover {
+  border-color: #cbd5e0;
+}
+
+.dropdown-selected.active {
+  border-color: #667eea;
+}
+
+.placeholder {
+  color: #a0aec0;
+}
+
+.selected-trainer-display {
+  color: #2d3748;
+}
+
+.dropdown-arrow {
+  color: #718096;
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: none;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.dropdown-search {
+  padding: 12px;
+  border-bottom: 1px solid #f7fafc;
+  background: #f7fafc;
+}
+
+.dropdown-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.dropdown-search-input:focus {
+  border-color: #667eea;
+}
+
+.dropdown-options {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.dropdown-option {
+  padding: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #f7fafc;
+  transition: background-color 0.2s;
+}
+
+.dropdown-option:hover {
+  background: #f7fafc;
+}
+
+.dropdown-option:last-child {
+  border-bottom: none;
+}
+
+.dropdown-option.no-results {
+  cursor: default;
+  color: #718096;
+  text-align: center;
+  font-style: italic;
+}
+
+.dropdown-option.no-results:hover {
+  background: white;
+}
+
+.trainer-option {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trainer-name {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 14px;
+}
+
+.trainer-details {
+  font-size: 12px;
+  color: #718096;
+}
+
+.trainer-sessions {
+  font-size: 11px;
+  color: #4a5568;
+  background: #edf2f7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+/* Selected Trainer Styles */
+.selected-trainer {
+  background: #f0fff4;
+  border: 1px solid #c6f6d5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.trainer-info h4 {
+  margin: 0 0 4px 0;
+  color: #22543d;
+  font-size: 16px;
+}
+
+.trainer-info p {
+  margin: 0 0 4px 0;
+  color: #2f855a;
+  font-size: 14px;
+}
+
+.trainer-info small {
+  color: #38a169;
+  font-size: 12px;
+}
+
+.clear-btn {
+  background: #fed7d7;
+  color: #c53030;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.clear-btn:hover {
+  background: #feb2b2;
+}
+
+/* Dropdown Animation */
+.dropdown-menu {
+  animation: dropdownSlide 0.2s ease-out;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design for Dropdown */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    transform: translateY(-50%);
+    max-height: 60vh;
+  }
+
+  .dropdown-search {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .selected-trainer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .clear-btn {
+    align-self: flex-start;
+  }
+}
+
+/* Custom Scrollbar for Dropdown */
+.dropdown-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-options::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dropdown-options::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.dropdown-options::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* No Trainer Selected State */
+.no-trainer-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.empty-state {
+  text-align: center;
+  color: #718096;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #4a5568;
+}
+
+.empty-state p {
+  font-size: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Admin Header Styling */
+.header h1 {
+  color: #2d3748;
+}
+
+/* Admin Stats Styling */
+.stats .stat-card:nth-child(2) .stat-number {
+  color: #48bb78;
+}
+
+.stats .stat-card:nth-child(3) .stat-number {
+  color: #ed8936;
+}
+
+.stats .stat-card:nth-child(4) .stat-number {
+  color: #f56565;
+}
+
+/* Admin Session Items - Remove delete buttons */
+.session-item .delete-session {
+  display: none;
+}
+
+.session-card .session-actions {
+  display: none;
+}
+
+/* Admin Login Page Styling */
+#adminLoginPage .logo {
+  color: #2d3748;
+}
+
+#adminLoginPage .login-header h1 {
+  color: #2d3748;
+}
+
+/* Admin Calendar Customizations */
+.admin-dashboard .session-item {
+  cursor: default;
+}
+
+.admin-dashboard .session-card {
+  cursor: default;
+}
+
+/* Admin-specific session item styling */
+.admin-dashboard .session-item:hover {
+  opacity: 0.9;
+}
+
+/* Hide action buttons in admin view */
+.admin-dashboard .session-actions {
+  display: none !important;
+}
+
+.admin-dashboard .delete-session {
+  display: none !important;
+}
